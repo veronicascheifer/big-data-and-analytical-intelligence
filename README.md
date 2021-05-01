@@ -8,6 +8,7 @@ Graduação na Pontifícia Universidade Católica do Paraná (PUC - PR)
 * Raciocínio Computacional
 * Frameworks de Big Data 
 * Programação Orientada a Objetos
+* Fundamentos de Internet das Coisas
 
 ## Autora
 
