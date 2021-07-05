@@ -17,13 +17,13 @@ public class ArvoreBinariaBusca
         if (novo == null)
         {
             novo = new NoArvore(termo);
-            ListaEncadeada lista = novo.listaArquivos;
+            ListaArquivos lista = novo.listaArquivos;
             lista.insereOrdenado(arquivo, 1);
         }
         else
         {
-            ListaEncadeada lista = novo.listaArquivos;
-            Node node = lista.buscar(arquivo);
+            ListaArquivos lista = novo.listaArquivos;
+            NoLista node = lista.buscar(arquivo);
 
             if (node != null)
             {

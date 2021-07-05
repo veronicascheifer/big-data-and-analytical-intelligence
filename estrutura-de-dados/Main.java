@@ -4,7 +4,7 @@ public class Main
 	    
 		System.out.println("Lista Encadeada");
 		
-		ListaEncadeada lista = new ListaEncadeada();
+		ListaArquivos lista = new ListaArquivos();
 		
 		lista.insereOrdenado("arq1.txt", 1);
 		lista.insereOrdenado("arq3.txt", 10);

@@ -3,14 +3,14 @@ public class NoArvore
     public long item;
 
     public String termo;
-    public ListaEncadeada listaArquivos;
+    public ListaArquivos listaArquivos;
     public NoArvore dir;
     public NoArvore esq;
 
     public NoArvore()
     {
         this.termo = "";
-        listaArquivos = new ListaEncadeada();
+        listaArquivos = new ListaArquivos();
         dir = null;
         esq = null;
     }
@@ -18,7 +18,7 @@ public class NoArvore
     public NoArvore(String termo)
     {
         this.termo = termo;
-        listaArquivos = new ListaEncadeada();
+        listaArquivos = new ListaArquivos();
         dir = null;
         esq = null;
     }
