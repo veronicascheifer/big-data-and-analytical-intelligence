@@ -1,8 +1,6 @@
-# Big Data e Inteligência Analítica
+# Undergraduate degree
 
-Graduação na Pontifícia Universidade Católica do Paraná (PUC - PR) 
-
-## Disciplinas
+## Subjects
 
 * Banco de Dados
 * Raciocínio Computacional
@@ -11,7 +9,7 @@ Graduação na Pontifícia Universidade Católica do Paraná (PUC - PR)
 * Fundamentos de Internet das Coisas
 * Estrutura de Dados
 
-## Autora
+## Autor
 
 * Verônica Scheifer
 
