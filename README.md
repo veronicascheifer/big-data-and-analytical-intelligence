@@ -11,7 +11,7 @@
 
 ## Author
 
-* Verônica Scheifer
+* Veronica Scheifer
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
