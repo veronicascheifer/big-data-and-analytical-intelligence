@@ -2,14 +2,14 @@
 
 ## Subjects
 
-* Banco de Dados
-* Raciocínio Computacional
-* Frameworks de Big Data 
-* Programação Orientada a Objetos
-* Fundamentos de Internet das Coisas
-* Estrutura de Dados
+* Database
+* Logic programming
+* Big Data Frameworks
+* Object-oriented programming
+* Internet of Things Fundamentals
+* Data Structures
 
-## Autor
+## Author
 
 * Verônica Scheifer
 
