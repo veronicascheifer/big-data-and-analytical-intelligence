@@ -3,7 +3,7 @@
 ## Subjects
 
 * Database
-* Logic programming
+* Computer logic
 * Big Data Frameworks
 * Object-oriented programming
 * Internet of Things Fundamentals
