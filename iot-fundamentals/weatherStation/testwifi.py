@@ -1,10 +1,10 @@
 
-def conecta(ssid, senha):
+def connect(ssid, password):
     import network
     import time
     station = network.WLAN(network.STA_IF)
     station.active(True)
-    station.connect(ssid, senha)
+    station.connect(ssid, password)
     for t in range(50):
         if station.isconnected():
             break
@@ -12,14 +12,14 @@ def conecta(ssid, senha):
     return station
 
 import urequests
-print("Conectando...")
-station = conecta("nome da rede", "senha")
+print("Connecting...")
+station = connect("Network Name", "Password")
 if not station.isconnected():
-    print("N‹o conectado!...")
+    print("Not connected!...")
 else:
-    print("Conectado!...")
-    print("Acessando o site...")
+    print("Connecting!...")
+    print("Accessing the website...")
     response = urequests.get("http://teste.afonsomiguel.com")
-    print("P‡gina acessada:")
+    print("Page Accessed:")
     print(response.text)
     station.disconnect()

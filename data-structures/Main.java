@@ -4,35 +4,35 @@ public class Main
 {
 	public static void main(String[] args) {
 	    
-		System.out.println("Lista Encadeada");
+		System.out.println("Linked List");
 		
-		ListaArquivos lista = new ListaArquivos();
+		filesList list = new filesList();
 		
-		lista.insereOrdenado("arq1.txt", 1);
-		lista.insereOrdenado("arq3.txt", 10);
-		lista.insereOrdenado("arq2.txt", 5);
-		lista.insereOrdenado("arq4.txt", 3);
+		list.insertSorted("file1.txt", 1);
+		list.insertSorted("file3.txt", 10);
+		list.insertSorted("file2.txt", 5);
+		list.insertSorted("file4.txt", 3);
 		
-        ArvoreBinariaBusca arvore = new ArvoreBinariaBusca();
-        arvore.inserir("bola", "arq1.txt");
-        arvore.inserir("casa", "arq1.txt");
-        arvore.inserir("dado", "arq1.txt");
-        arvore.inserir("bola", "arq1.txt");
-        arvore.inserir("casa", "arq1.txt");
-        arvore.inserir("dado", "arq2.txt");
-        arvore.inserir("bola", "arq2.txt");
-        arvore.inserir("arvore", "arq2.txt");
-        arvore.inserir("arvore", "arq2.txt");
-        arvore.inserir("arvore", "arq2.txt");
-        arvore.inserir("arvore", "arq2.txt");
+        BinaryTreeSearch tree = new BinaryTreeSearch();
+        tree.insert("ball", "file1.txt");
+        tree.insert("house", "file1.txt");
+        tree.insert("data", "file1.txt");
+        tree.insert("ball", "file1.txt");
+        tree.insert("house", "file1.txt");
+        tree.insert("data", "file2.txt");
+        tree.insert("ball", "file2.txt");
+        tree.insert("tree", "file2.txt");
+        tree.insert("tree", "file2.txt");
+        tree.insert("tree", "file2.txt");
+        tree.insert("tree", "file2.txt");
 
-        //Simulacao do input do usuario
-        ArrayList<String> termos = new ArrayList<String>();
-        termos.add("casa");
-        termos.add("bola");
-        termos.add("dado");
+        //User input simulation
+        ArrayList<String> terms = new ArrayList<String>();
+        terms.add("house");
+        terms.add("ball");
+        terms.add("data");
         
-        Buscador buscador = new Buscador();
-        buscador.buscaTermos(termos, lista, arvore);
+        searchEngine searchEngine = new searchEngine();
+        searchEngine.searchTerms(terms, list, tree);
 	}
 }
