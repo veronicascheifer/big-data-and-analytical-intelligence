@@ -19,7 +19,7 @@ if not station.isconnected():
 else:
     print("Connecting!...")
     print("Accessing the website...")
-    response = urequests.get("http://teste.afonsomiguel.com")
+    response = urequests.get("http://teste.teste.com")
     print("Page Accessed:")
     print(response.text)
     station.disconnect()
