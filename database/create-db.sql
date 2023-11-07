@@ -5,15 +5,15 @@ create database techlogica;
 use techlogica;
 
 create table Role (
-	idRole int not null auto_increment,
+    idRole int not null auto_increment,
     Name varchar(45) not null,
     Description varchar(250) not null,
     Supervisor tinyint not null,
-	primary key(idRole)
+    primary key(idRole)
 );
 
 create table Departament (
-	idDepartament int not null auto_increment,
+    idDepartament int not null auto_increment,
     Name varchar(100) not null,
     PhoneNumber varchar(10) not null,
     Budget float not null,
@@ -31,7 +31,7 @@ create table Project (
 );
 
 create table Stage (
-	idStage int not null auto_increment,
+    idStage int not null auto_increment,
     Name varchar(45) not null,
     StartDate datetime not null,
     EndDate datetime null,
@@ -42,8 +42,8 @@ create table Stage (
 );
 
 create table Meeting (
-	idMeeting int not null auto_increment,
-    Ata text not null,
+    idMeeting int not null auto_increment,
+    Notes text not null,
     DataMeeting datetime not null,
     idStage int not null,
     primary key(idMeeting),
@@ -52,9 +52,9 @@ create table Meeting (
 );
 
 create table Employee (
-	idEmployee int not null auto_increment, 
+    idEmployee int not null auto_increment, 
     Name varchar(100) not null,
-	LastName varchar(100) not null,
+    LastName varchar(100) not null,
     BirthDate date not null,
     Salary float not null,
     Rg varchar(20) not null,
@@ -69,7 +69,7 @@ create table Employee (
     );
     
 create table Address (
-	idAddress int not null auto_increment,
+    idAddress int not null auto_increment,
     Street varchar(100) not null, 
     Number varchar(10) not null, 
     CEP varchar(8) null,
@@ -84,7 +84,7 @@ create table Address (
 );
 
 create table Relative (
-	idRelative int not null auto_increment,
+    idRelative int not null auto_increment,
     Name varchar(100) not null,
     BirthDate date not null,
     LastName varchar(100) not null,
@@ -94,7 +94,7 @@ create table Relative (
 );
 
 create table EmployeeProject (
-	idEmployeeProject int not null auto_increment,
+    idEmployeeProject int not null auto_increment,
     idEmployee int not null,
     idProject int not null,
     primary key(idEmployeeProject),
@@ -104,7 +104,7 @@ create table EmployeeProject (
 );
 
 insert into Role (idRole, Name, Description, Supervisor) values (1, "Data Analyst", "Produces analysis of company data", 0);
-insert into Role (idRole, Name, Description, Supervisor) values (2, "Data Scientist", "Create analyzes using mathematical models", 0);
+insert into Role (idRole, Name, Description, Supervisor) values (2, "Data Scientist", "Create analysis using mathematical models", 0);
 insert into Role (idRole, Name, Description, Supervisor) values (3, "Data Engineer", "Develop company database", 0);
 insert into Role (idRole, Name, Description, Supervisor) values (4, "Data Manager", "Manage the data team", 1);
 insert into Role (idRole, Name, Description, Supervisor) values (5, "HR Analyst", "Work to hire new employes", 0);
@@ -158,21 +158,21 @@ insert into Stage (idStage, Name, StartDate, IdProject) values (13, "Stage 13", 
 insert into Stage (idStage, Name, StartDate, IdProject) values (14, "Stage 12", 14/03/2020, 14);
 insert into Stage (idStage, Name, StartDate, IdProject) values (15, "Stage 14", 15/03/2020, 15);
 
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (1, "This meeting was held to define some stages, Stages x, y, z", 01/03/2020, 1);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (2, "This meeting was held to define some stages, Stages x, y, z", 02/03/2020, 2);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (3, "This meeting was held to define some stages, Stages x, y, z", 03/03/2020, 3);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (4, "This meeting was held to define some stages, Stages x, y, z", 04/03/2020, 4);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (5, "This meeting was held to define some stages, Stages x, y, z", 05/03/2020, 5);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (6, "This meeting was held to define some stages, Stages x, y, z", 06/03/2020, 6);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (7, "This meeting was held to define some stages, Stages x, y, z", 07/03/2020, 7);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (8, "This meeting was held to define some stages, Stages x, y, z", 08/03/2020, 8);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (9, "This meeting was held to define some stages, Stages x, y, z", 09/03/2020, 9);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (10, "This meeting was held to define some stages, Stages x, y, z", 10/03/2020, 10);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (11, "This meeting was held to define some stages, Stages x, y, z", 11/03/2020, 11);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (12, "This meeting was held to define some stages, Stages x, y, z", 12/03/2020, 12);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (13, "This meeting was held to define some stages, Stages x, y, z", 13/03/2020, 13);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (14, "This meeting was held to define some stages, Stages x, y, z", 14/03/2020, 14);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (15, "This meeting was held to define some stages, Stages x, y, z", 15/03/2020, 15);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (1, "This meeting was to define some stages, Stages x, y, z", 01/03/2020, 1);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (2, "This meeting was to define some stages, Stages x, y, z", 02/03/2020, 2);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (3, "This meeting was to define some stages, Stages x, y, z", 03/03/2020, 3);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (4, "This meeting was to define some stages, Stages x, y, z", 04/03/2020, 4);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (5, "This meeting was to define some stages, Stages x, y, z", 05/03/2020, 5);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (6, "This meeting was to define some stages, Stages x, y, z", 06/03/2020, 6);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (7, "This meeting was to define some stages, Stages x, y, z", 07/03/2020, 7);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (8, "This meeting was to define some stages, Stages x, y, z", 08/03/2020, 8);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (9, "This meeting was to define some stages, Stages x, y, z", 09/03/2020, 9);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (10, "This meeting was to define some stages, Stages x, y, z", 10/03/2020, 10);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (11, "This meeting was to define some stages, Stages x, y, z", 11/03/2020, 11);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (12, "This meeting was to define some stages, Stages x, y, z", 12/03/2020, 12);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (13, "This meeting was to define some stages, Stages x, y, z", 13/03/2020, 13);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (14, "This meeting was to define some stages, Stages x, y, z", 14/03/2020, 14);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (15, "This meeting was to define some stages, Stages x, y, z", 15/03/2020, 15);
 
 insert into Employee (idEmployee, Name, LastName, BirthDate, Salary, Rg, Cpf, Gender, idDepartament, idRole) values (1, "Larissa", "Montenegro", 19/10/1990, 2456.00, "190092325", "02499944995", 1, 1, 1);
 insert into Employee (idEmployee, Name, LastName, BirthDate, Salary, Rg, Cpf, Gender, idDepartament, idRole) values (2, "Angela", "Arantes", 20/10/1990, 5000.00, "190092326", "02499944996", 1, 1, 2);
@@ -298,7 +298,7 @@ delete
 
 
 insert into Role (idRole, Name, Description, Supervisor) values (1, "Data Analyst", "Produces analysis of company data", 0);
-insert into Role (idRole, Name, Description, Supervisor) values (2, "Data Scientist", "Create analyzes using mathematical models", 0);
+insert into Role (idRole, Name, Description, Supervisor) values (2, "Data Scientist", "Create analysis using mathematical models", 0);
 insert into Role (idRole, Name, Description, Supervisor) values (3, "Data Engineer", "Develop company database", 0);
 insert into Role (idRole, Name, Description, Supervisor) values (4, "Data Manager", "Manage the data team", 1);
 insert into Role (idRole, Name, Description, Supervisor) values (5, "HR Analyst", "Work to hire new employes", 0);
@@ -352,21 +352,21 @@ insert into Stage (idStage, Name, StartDate, IdProject) values (13, "Stage 13", 
 insert into Stage (idStage, Name, StartDate, IdProject) values (14, "Stage 12", 14/03/2020, 14);
 insert into Stage (idStage, Name, StartDate, IdProject) values (15, "Stage 14", 15/03/2020, 15);
 
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (1, "This meeting was held to define some stages, Stages x, y, z", 01/03/2020, 1);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (2, "This meeting was held to define some stages, Stages x, y, z", 02/03/2020, 2);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (3, "This meeting was held to define some stages, Stages x, y, z", 03/03/2020, 3);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (4, "This meeting was held to define some stages, Stages x, y, z", 04/03/2020, 4);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (5, "This meeting was held to define some stages, Stages x, y, z", 05/03/2020, 5);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (6, "This meeting was held to define some stages, Stages x, y, z", 06/03/2020, 6);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (7, "This meeting was held to define some stages, Stages x, y, z", 07/03/2020, 7);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (8, "This meeting was held to define some stages, Stages x, y, z", 08/03/2020, 8);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (9, "This meeting was held to define some stages, Stages x, y, z", 09/03/2020, 9);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (10, "This meeting was held to define some stages, Stages x, y, z", 10/03/2020, 10);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (11, "This meeting was held to define some stages, Stages x, y, z", 11/03/2020, 11);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (12, "This meeting was held to define some stages, Stages x, y, z", 12/03/2020, 12);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (13, "This meeting was held to define some stages, Stages x, y, z", 13/03/2020, 13);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (14, "This meeting was held to define some stages, Stages x, y, z", 14/03/2020, 14);
-insert into Meeting (idMeeting, Ata, DataMeeting, idStage) values (15, "This meeting was held to define some stages, Stages x, y, z", 15/03/2020, 15);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (1, "This meeting was to define some stages, Stages x, y, z", 01/03/2020, 1);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (2, "This meeting was to define some stages, Stages x, y, z", 02/03/2020, 2);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (3, "This meeting was to define some stages, Stages x, y, z", 03/03/2020, 3);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (4, "This meeting was to define some stages, Stages x, y, z", 04/03/2020, 4);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (5, "This meeting was to define some stages, Stages x, y, z", 05/03/2020, 5);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (6, "This meeting was to define some stages, Stages x, y, z", 06/03/2020, 6);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (7, "This meeting was to define some stages, Stages x, y, z", 07/03/2020, 7);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (8, "This meeting was to define some stages, Stages x, y, z", 08/03/2020, 8);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (9, "This meeting was to define some stages, Stages x, y, z", 09/03/2020, 9);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (10, "This meeting was to define some stages, Stages x, y, z", 10/03/2020, 10);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (11, "This meeting was to define some stages, Stages x, y, z", 11/03/2020, 11);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (12, "This meeting was to define some stages, Stages x, y, z", 12/03/2020, 12);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (13, "This meeting was to define some stages, Stages x, y, z", 13/03/2020, 13);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (14, "This meeting was to define some stages, Stages x, y, z", 14/03/2020, 14);
+insert into Meeting (idMeeting, Notes, DataMeeting, idStage) values (15, "This meeting was to define some stages, Stages x, y, z", 15/03/2020, 15);
 
 insert into Employee (idEmployee, Name, LastName, BirthDate, Salary, Rg, Cpf, Gender, idDepartament, idRole) values (1, "Larissa", "Montenegro", 19/10/1990, 2456.00, "190092325", "02499944995", 1, 1, 1);
 insert into Employee (idEmployee, Name, LastName, BirthDate, Salary, Rg, Cpf, Gender, idDepartament, idRole) values (2, "Angela", "Arantes", 20/10/1990, 5000.00, "190092326", "02499944996", 1, 1, 2);
