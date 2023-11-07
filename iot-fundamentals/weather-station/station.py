@@ -35,7 +35,7 @@ while x < 10:
         r.value(0)
             
     data = {'field1': temperature, 'field2': humidity}
-    request = urequests.post('https://api.thingspeak.com/update?api_key=J4NKP906UTS1Z58Q',
+    request = urequests.post('https://api.thingspeak.com/update?api_key=api_key',
         json = data,
         headers = {'content-type': 'application/json'})
     
