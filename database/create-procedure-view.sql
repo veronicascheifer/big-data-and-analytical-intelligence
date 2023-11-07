@@ -1,72 +1,72 @@
-#Criação da procedure
+#Create procedure
 DELIMITER |
-create procedure aumento_salario (IN aumento float)
+create procedure increase_salary (IN increase float)
 begin
 	start transaction;
-    update empregado
-       set salario = salario + (salario * (aumento/100));
+    update employee
+       set salary = salary + (salary * (increase/100));
 	commit;
 end;
 
 |
 DELIMITER ;
 
-call aumento_salario(10);
+call increase_salary(10);
 
 
 
 DELIMITER |
-# Criação da view 
-create view dados_empregado as 
-select e.nome as nome_empregado
-      , d.nome as nome_dependente
-  from empregado e
- inner join dependente d 
-    on e.idEmpregado = d.idEmpregado;
+#Create view
+create view employee_data as 
+select e.name as employee_name
+     , d.name as employee_dependents
+  from employee e
+ inner join dependents d 
+    on e.idEmployee = d.idEmployee;
 |
 DELIMITER ;
 
 
-# o nome do empregado com maior salário;  
-select q1.nome
+#Name of employee with highest salary;  
+select q1.name
   from (
-select nome 
-	 , max(salario)
-  from empregado) q1;
+select name 
+     , max(salary)
+  from employee) q1;
 
-#o nome do empregado com maior salário e o valor deste;
-select nome
-     , max(salario)
-  from empregado;
+#Name of employee with highest salary and the salary value;
+select name
+     , max(salary)
+  from employee;
 
-#o nome do empregado e respectivo salário, ordenando do maior para o menor valor;
+#Name of the employee and respective salary, ordering from highest to lowest value;
 
-select nome 
-     , salario
-  from empregado
- order by salario; 
+select name 
+     , salary
+  from employee
+ order by salary; 
 
-#a média de salário de empregados do gênero masculino;
-select AVG(salario)
-     , genero 
-  from empregado
- where genero = 0;
+#The average salary of male employees;
+select AVG(salary)
+     , gender 
+  from employee
+ where gender = 0;
  
-#a média de salário de empregados do gênero feminino;
-select AVG(salario)
-     , genero 
-  from empregado
- where genero = 1;
+#The average salary of female employees;
+select AVG(salary)
+     , gender 
+  from employee
+ where gender = 1;
 
-#o nome dos empregados que são gerentes;
-select e.nome
-  from empregado e
- inner join cargo c
-    on e.idCargo = c.idCargo
+#The name of employees who are managers;
+select e.name
+  from Employee e
+ inner join role c
+    on e.idRole = c.idRole
  where c.supervisor = 1;
 
-#o nome dos empregados que trabalham em um ou mais projetos;
-select distinct e.nome
-  from empregado e 
- inner join EmpregadoProjeto p 
-    on e.idEmpregado = p.idEmpregado;
+#The name of employees working on one or more projects;
+select distinct e.name
+  from employee e 
+ inner join ProjectEmployee p 
+    on e.idEmployee = p.idEmployee;
